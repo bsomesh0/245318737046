@@ -69,7 +69,7 @@ app.put('/updateventilator',middleware.checkToken,(req,res)=>{
     var ventid={ventilatorId:req.body.ventilatorId};
     console.log(ventid);
     var newvalues={$set:{status:req.body.status}};
-    db.collection("ventilator").updateone(ventid,newvalues,function(err,result){
+    db.collection("ventilator").updateOne(ventid,newvalues,function(err,result){
         res.json('1 document updated');
         if(err)throw err;
         //console.log("1 document updated");
